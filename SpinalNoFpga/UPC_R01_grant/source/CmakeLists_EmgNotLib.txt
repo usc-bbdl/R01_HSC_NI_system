@@ -1,0 +1,87 @@
+##########################################################################
+#
+# Author: Minos Niu 
+# Email:  cniu2 AT uic.edu
+# Credit to: Chris Scharver
+#
+# Try to find the HapticAPI library and include files. Note that
+# Windows is the only supported platform at this time, and the library
+# requires MFC as well.
+#
+# HAPTICAPI_INCLUDE_DIR, where to find HapticAPI.h
+# HAPTICAPI_LIBRARIES, the libraries to link against.
+# HAPTICAPI_FOUND, if false, do not try to use the HapticAPI.
+#
+# also defined, but not for general use is
+# HAPTICAPI_hapticapi_LIBRARY, full path to HapticAPI library.
+#
+##########################################################################
+cmake_minimum_required(VERSION 2.6)
+PROJECT(Cmn_4dir)
+
+SET(EXECUTABLE_OUTPUT_PATH ${Cmn_4dir_BINARY_DIR}/bin)
+SET(LIBRARY_OUTPUT_PATH ${Cmn_4dir_BINARY_DIR}/lib)
+
+FIND_PATH(CMN_CMAKE_MODULES FindHapticAPI.cmake
+	${Cmn_4dir_SOURCE_DIR}/modules
+	DOC "Folder containing custom CMake modules")
+SET(CMAKE_MODULE_PATH ${CMN_CMAKE_MODULES} ${CMAKE_MODULE_PATH})
+
+FIND_PACKAGE(GLUT REQUIRED)
+FIND_PACKAGE(OpenGL REQUIRED)
+FIND_PACKAGE(HapticAPI REQUIRED)
+FIND_PACKAGE(ScopeAPI REQUIRED)
+FIND_PACKAGE(pthread REQUIRED)
+FIND_PACKAGE(Inventor REQUIRED)
+# FIND_PACKAGE Boost
+set(Boost_USE_STATIC_LIBS   ON)
+set(Boost_USE_MULTITHREADED ON)
+FIND_PACKAGE(Boost 1.35.0 COMPONENTS program_options REQUIRED)
+FIND_PACKAGE(NIDAQMX REQUIRED)
+
+
+# Include the following directories when compiling 
+INCLUDE_DIRECTORIES(
+ 	${Cmn_4dir_SOURCE_DIR}/include
+	${HAPTICAPI_INCLUDE_DIR}
+ 	${OPENGL_INCLUDE_DIR}
+	${GLUT_INCLUDE_DIR}
+ 	${SCOPEAPI_INCLUDE_DIR}
+ 	${PTHREADS_WIN32_INCLUDE_DIR}
+  	${INVENTOR_INCLUDE_DIR}	
+ 	${Boost_INCLUDE_DIR} # Library names ARE CaSE-sENsITve!!!!!!!
+ 	${NIDAQMX_INCLUDE_DIR}
+	)
+
+
+# Compile the ExampleLib library.
+# ADD_LIBRARY(ExampleLib ExampleLib.cpp)
+
+# THe examples link against the same libraries, so group them here to
+# make the TARGET_LINK_LIBRARIES easier to read.
+SET(SYS_LIBRARIES
+	${GLUT_LIBRARIES}
+ 	${HAPTICAPI_LIBRARIES}
+ 	${SCOPEAPI_scopeapi_LIBRARY}
+ 	${PTHREADS_WIN32_LIBRARY}
+ 	${OPENGL_LIBRARIES}
+ 	${INVENTOR_LIBRARIES}
+ 	${Boost_PROGRAM_OPTIONS_LIBRARY}
+ 	${Boost_PROGRAM_OPTIONS_LIBRARY_DEBUG}
+ 	${NIDAQMX_LIBRARIES}
+# 	ExampleLib
+	)
+
+# Rather than individually listing each example, let's take advantage
+# of CMake's loop capabilities. Just list each example's base name.
+SET(CMN_EXECUTABLE_NAMES
+	Cmn4Dir_RtoL
+	)
+
+# Now loop through each name, defining the executable by grabbing the
+# identically-named source file and linking the required libraries.
+FOREACH(EXEC ${CMN_EXECUTABLE_NAMES})
+	ADD_EXECUTABLE(${EXEC} ${EXEC}.cpp Utilities.cpp EmgDaq.cpp ReadParadigm.cpp)
+	TARGET_LINK_LIBRARIES(${EXEC} ${SYS_LIBRARIES})
+	ADD_DEPENDENCIES(${EXEC} EmgDaq Utilities ReadParadigm)
+ENDFOREACH(EXEC)
