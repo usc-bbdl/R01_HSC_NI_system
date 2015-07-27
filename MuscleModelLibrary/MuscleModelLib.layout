@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="include\MM_HT_Biewener.h" open="0" top="0" tabpos="3">
+		<Cursor position="2742" topLine="70" />
+	</File>
+	<File name="include\MM_HillType.h" open="1" top="0" tabpos="1">
+		<Cursor position="240" topLine="56" />
+	</File>
+	<File name="include\MM_LowPassFilter.h" open="0" top="0" tabpos="4">
+		<Cursor position="79" topLine="6" />
+	</File>
+	<File name="include\Utility.h" open="0" top="0" tabpos="7">
+		<Cursor position="1172" topLine="16" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="215" topLine="1" />
+	</File>
+	<File name="main2.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="2850" topLine="71" />
+	</File>
+	<File name="main3.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="348" topLine="12" />
+	</File>
+	<File name="main4.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="281" topLine="2" />
+	</File>
+	<File name="src\MM_HT_Biewener.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="1957" topLine="69" />
+	</File>
+	<File name="src\MM_HillType.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="1080" topLine="27" />
+	</File>
+	<File name="src\MM_LowPassFilter.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="3154" topLine="100" />
+	</File>
+	<File name="src\Utility.cpp" open="0" top="0" tabpos="8">
+		<Cursor position="2346" topLine="48" />
+	</File>
+</CodeBlocks_layout_file>

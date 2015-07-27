@@ -1,0 +1,83 @@
+# depslib dependency file v1.0
+1438028354 source:c:\users\karen\documents\itam13\frank\musclemodellibrary\main.cpp
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<string>
+	<unistd.h>
+	<stdlib.h>
+	"include\MM_HT_Biewener.h"
+
+1436328190 c:\users\karen\documents\itam13\frank\musclemodellibrary\include\mm_lowpassfilter.h
+	<sys/time.h>
+
+1436918544 source:c:\users\karen\documents\itam13\frank\musclemodellibrary\src\mm_lowpassfilter.cpp
+	"..\include\MM_LowPassFilter.h"
+	<sys/time.h>
+	<stdio.h>
+	<iostream>
+
+1438032362 source:c:\users\karen\documents\itam13\frank\musclemodellibrary\src\mm_hilltype.cpp
+	"..\include\MM_HillType.h"
+	<math.h>
+
+1437076570 c:\users\karen\documents\itam13\frank\musclemodellibrary\include\mm_hilltype.h
+	<sys/time.h>
+	<utility>
+
+1436934600 source:c:\users\karen\documents\itam13\frank\musclemodellibrary\src\length_gen.cpp
+	"..\include\Length_Gen.h"
+
+1436935673 c:\users\karen\documents\itam13\frank\musclemodellibrary\include\length_gen.h
+	<utility>
+
+1437601516 source:c:\users\karen\documents\itam13\frank\musclemodellibrary\src\utility.cpp
+	"..\include\Utility.h"
+
+1437601144 c:\users\karen\documents\itam13\frank\musclemodellibrary\include\utility.h
+	<utility>
+	<iostream>
+	<math.h>
+
+1437789507 source:c:\users\karen\documents\itam13\frank\musclemodellibrary\src\mm_ht_biewener.cpp
+	"..\include\MM_HT_Biewener.h"
+	<math.h>
+	<iostream>
+
+1437789260 c:\users\karen\documents\itam13\frank\musclemodellibrary\include\mm_ht_biewener.h
+	<sys/time.h>
+	<utility>
+	<queue>
+
+1438028354 source:c:\users\karen\documents\itam13\frank\musclemodellibrary\main2.cpp
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<string>
+	<unistd.h>
+	<stdlib.h>
+	"include\MM_LowPassFilter.h"
+	"include\MM_HillType.h"
+	"include\Utility.h"
+
+1437688406 source:c:\users\karen\documents\itam13\frank\musclemodellibrary\main3.cpp
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<string>
+	<unistd.h>
+	<stdlib.h>
+	"include\MM_HT_Biewener.h"
+	"include\Utility.h"
+
+1437616514 source:c:\users\karen\documents\itam13\frank\musclemodellibrary\main4.cpp
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<string>
+	<unistd.h>
+	<stdlib.h>
+	"include\MM_LowPassFilter.h"
+	"include\MM_HillType.h"
+	"include\Utility.h"
+
